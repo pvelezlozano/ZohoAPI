@@ -1,14 +1,14 @@
 import requests
 import json
-import readtokens
+import readstuff
 #This script is where we will make petitions to create, get and change records of our Creator App
 #NOTEE, the paremeter data in post, get and patch must be given as a string, otherwise an error will be shown
-access_token=readtokens.access_token
+access_token=readstuff.access_token
 header={"Authorization": "Zoho-oauthtoken "+access_token}
-username="quickapps"
-app_name="pedrovelez"
-nombre_reporte="All_Pythons"
-nombre_form="Python"
+username=readstuff.username
+app_name=readstuff.app_name
+nombre_reporte=readstuff.report_name
+nombre_form=readstuff.form_name
 print("1. Get records by id")
 print("2. Get records")
 print("3. Update records by id")
@@ -18,7 +18,9 @@ eleccion=int(input("Dame un numero para hacer tu eleccion\n"))
 #Get records, detail view (gets records per id)
 if (eleccion==1):
     id_record="3461648000019089188"
-    r1=requests.get("https://creator.zoho.com/api/v2/"+username+"/"+app_name+"/report/"+nombre_reporte+"/"+id_record,headers=header)
+    url="https://creator.zoho.com/api/v2/"+username+"/"+app_name+"/report/"+nombre_reporte+"/"+id_record
+    print(url)
+    r1=requests.get(url=url,headers=header)
     contenido=r1.content.decode("utf-8")
     contenidojson=json.loads(contenido)
     print(contenidojson)
