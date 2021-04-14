@@ -1,0 +1,12 @@
+These scopes will be used in the section "generate code" after creating a self client
+The following scopes available for Creator are:
+ZohoCreator.form.CREATE
+ZohoCreator.report.CREATE
+ZohoCreator.report.READ
+ZohoCreator.report.UPDATE
+ZohoCreator.report.DELETE
+ZohoCreator.meta.form.READ
+ZohoCreator.meta.application.READ
+ZohoCreator.dashboard.READ
+
+You can combine multiple scopes to generate a single scope code which will be used in the init.py script

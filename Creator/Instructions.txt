@@ -1,0 +1,15 @@
+Instructions to make petitions to Creator's API
+Create a self client on https://api-console.zoho.com/
+Save the clientid and clientsecret
+Choose the available scopes to generate the scopeid, to look at the available scopes go to Scopes.txt
+When you choose the scope list a scopeid will be given to you
+Once you've got the THREE codes (CLIENTID,CLIENTSECRET,SCOPEID) make a POST request to zoho with the following sintax
+When the request is made, you will be given an Access Token 
+This access token will be used in the script: apis.py to retrieve, update or post information to your Creator application
+Note: Access tokens only last for an hour, if it expires, go to the script refresAT.py to refresh it
+
+The file tokens.txt contain all 4 tokens in this order:
+clientid
+clientsecret
+scopeid
+accesstoken

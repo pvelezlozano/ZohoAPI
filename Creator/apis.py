@@ -1,8 +1,9 @@
 import requests
 import json
-#Aqui en este programa se haran las peticiones para crear, obtener y modificar los reportes de nuestra app
-#OJO, EL PARAMETRO DATA EN POST,GET Y PATCH SE DEBE PASAR COMO STRING
-access_token="1000.876cf9472b7827e119ffb697f5ee79c1.7e92b65e1d9824d43b3d8f95c605661c"
+import readtokens
+#This script is where we will make petitions to create, get and change records of our Creator App
+#NOTEE, the paremeter data in post, get and patch must be given as a string, otherwise an error will be shown
+access_token=readtokens.access_token
 header={"Authorization": "Zoho-oauthtoken "+access_token}
 username="quickapps"
 app_name="pedrovelez"
@@ -17,10 +18,10 @@ eleccion=int(input("Dame un numero para hacer tu eleccion\n"))
 #Get records, detail view (gets records per id)
 if (eleccion==1):
     id_record="3461648000019089188"
-    
     r1=requests.get("https://creator.zoho.com/api/v2/"+username+"/"+app_name+"/report/"+nombre_reporte+"/"+id_record,headers=header)
     contenido=r1.content.decode("utf-8")
-    print(contenido)
+    contenidojson=json.loads(contenido)
+    print(contenidojson)
 #Get records, quick view (gets all records) ?from=50&limit=100 MAX 200
 elif eleccion==2:
     r2=requests.get("https://creator.zoho.com/api/v2/"+username+"/"+app_name+"/report/"+nombre_reporte,headers=header)
