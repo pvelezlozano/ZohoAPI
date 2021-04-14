@@ -1,20 +1,29 @@
 import requests
 import json
-import readstuff
+import contents
+def menu():
+    print("1. Get records by id")
+    print("2. Get records")
+    print("3. Update records by id")
+    print("4. Update records")
+    print("5. Crear records")
+    eleccion=int(input("Dame un numero para hacer tu eleccion\n"))
+    return eleccion
+
+
 #This script is where we will make petitions to create, get and change records of our Creator App
-#NOTEE, the paremeter data in post, get and patch must be given as a string, otherwise an error will be shown
-access_token=readstuff.access_token
+#NOTEE, the paremeter data in post, update,get and patch must be given as a string, otherwise an error will be shown
+
+
+access_token=contents.access_token
 header={"Authorization": "Zoho-oauthtoken "+access_token}
-username=readstuff.username
-app_name=readstuff.app_name
-nombre_reporte=readstuff.report_name
-nombre_form=readstuff.form_name
-print("1. Get records by id")
-print("2. Get records")
-print("3. Update records by id")
-print("4. Update records")
-print("5. Crear records")
-eleccion=int(input("Dame un numero para hacer tu eleccion\n"))
+username=contents.username
+app_name=contents.app_name
+nombre_reporte=contents.report_name
+nombre_form=contents.form_name
+
+eleccion=menu()
+
 #Get records, detail view (gets records per id)
 if (eleccion==1):
     id_record="3461648000019089188"

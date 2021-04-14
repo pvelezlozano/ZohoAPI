@@ -10,3 +10,4 @@ with open("Information/appmeta.txt","r") as appfile:
     app_name=appfile.readline().strip("\n")
     report_name=appfile.readline().strip("\n")
     form_name=appfile.readline().strip("\n")
+

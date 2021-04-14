@@ -1,0 +1,15 @@
+These scopes will be used in the section "generate code" after creating a self client
+The following scopes available for CRM are:
+
+All modules
+ZohoCRM.modules.READ(Read-only permission)
+ZohoCRM.modules.CREATE
+ZohoCRM.modules.UPDATE
+ZohoCRM.modules.DELETE
+or to a selected module
+ZohoCRM.modules.leads.READ(Read-only permission)
+ZohoCRM.modules.leads.CREATE
+ZohoCRM.modules.leads.UPDATE
+ZohoCRM.modules.leads.DELETE
+
+ZohoCRM.settings.ALL
